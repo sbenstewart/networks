@@ -1,2 +1,0 @@
-ns exp1.tcl
-awk -f exp1.awk PA1.tr
