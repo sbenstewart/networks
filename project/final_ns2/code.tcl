@@ -106,8 +106,8 @@ $ns queue-limit $n15 $n3 10
 set udp0 [new Agent/UDP]
 $ns attach-agent $n0 $udp0
 set cbr0 [new Application/Traffic/CBR]
-$cbr0 set packetSize_ 500
-#$cbr0 set interval_ 0.005
+$cbr0 set packetSize_ 50000
+$cbr0 set interval_ 0.005
 $cbr0 attach-agent $udp0
 # attaching transport layer protocols
 set null0 [new Agent/Null]
