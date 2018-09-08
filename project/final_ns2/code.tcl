@@ -14,21 +14,53 @@ exit 0
 set topography [new Topography]
 $topography load_flatgrid 400 400
 set n0 [$ns node]
+$n0 set X_ 20.0
+$n0 set Y_ 20.0
 set n1 [$ns node]
+$n1 set X_ 20.0
+$n1 set Y_ 30.0
 set n2 [$ns node]
+$n2 set X_ 20.0
+$n2 set Y_ 40.0
 set n3 [$ns node]
+$n3 set X_ 20.0
+$n3 set Y_ 50.0
 set n4 [$ns node]
+$n4 set X_ 30.0
+$n4 set Y_ 20.0
 set n5 [$ns node]
+$n5 set X_ 30.0
+$n5 set Y_ 30.0
 set n6 [$ns node]
+$n6 set X_ 30.0
+$n6 set Y_ 40.0
 set n7 [$ns node]
+$n7 set X_ 30.0
+$n7 set Y_ 50.0
 set n8 [$ns node]
+$n8 set X_ 40.0
+$n8 set Y_ 20.0
 set n9 [$ns node]
+$n9 set X_ 40.0
+$n9 set Y_ 30.0
 set n10 [$ns node]
+$n10 set X_ 40.0
+$n10 set Y_ 40.0
 set n11 [$ns node]
+$n11 set X_ 40.0
+$n11 set Y_ 50.0
 set n12 [$ns node]
+$n12 set X_ 50.0
+$n12 set Y_ 20.0
 set n13 [$ns node]
+$n13 set X_ 50.0
+$n13 set Y_ 30.0
 set n14 [$ns node]
+$n14 set X_ 50.0
+$n14 set Y_ 40.0
 set n15 [$ns node]
+$n15 set X_ 50.0
+$n15 set Y_ 50.0
 
 # Letter S is capital
 # open a nam trace file in write mode
@@ -108,7 +140,7 @@ $ns queue-limit $n15 $n3 10
 set udp0 [new Agent/UDP]
 $ns attach-agent $n0 $udp0
 set cbr0 [new Application/Traffic/CBR]
-$cbr0 set packetSize_ 50000
+$cbr0 set packetSize_ 5000
 $cbr0 set interval_ 0.005
 $cbr0 attach-agent $udp0
 # attaching transport layer protocols
