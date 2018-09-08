@@ -64,6 +64,8 @@
     # Provide initial location of mobilenodes
     $n(0) set X_ 0.0
     $n(0) set Y_ 0.0
+    $n(1) set X_ 10.0
+    $n(1) set Y_ 10.0
     #Create a UDP Source Node
     set udp0 [new Agent/UDP]
     $udp0 set class_ 1

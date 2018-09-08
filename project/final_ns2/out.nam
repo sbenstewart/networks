@@ -9,7 +9,7 @@ c -t * -i 3 -n blue
 n -t * -a 17 -s 17 -S UP -v circle -c black -i black
 n -t * -a 0 -s 0 -S UP -v circle -c black -i black -x 0.0 -y 0.0
 n -t * -a 18 -s 18 -S UP -v circle -c black -i black
-n -t * -a 1 -s 1 -S UP -v circle -c black -i black
+n -t * -a 1 -s 1 -S UP -v circle -c black -i black -x 10.0 -y 10.0
 n -t * -a 20 -s 20 -S UP -v circle -c black -i black
 n -t * -a 19 -s 19 -S UP -v circle -c black -i black
 n -t * -a 2 -s 2 -S UP -v circle -c black -i black
