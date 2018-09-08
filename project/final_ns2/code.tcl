@@ -11,21 +11,7 @@ close $tf
 exec nam code.nam &
 exit 0
 }
-set val(rp) AOMDV ;
-$ns node-config -adhocRouting $val(rp) \
--llType $val(ll) \
--macType $val(mac) \
--ifqType $val(ifq) \
--ifqLen $val(ifqlen) \
--antType $val(ant) \
--propType $val(prop) \
--phyType $val(netif) \
--channelType $val(chan) \
--topoInstance $topo \
--agentTrace ON \
--routerTrace ON \
--macTrace OFF \
--movementTrace ON
+
 
 set topography [new Topography]
 $topography load_flatgrid 400 400
