@@ -12,6 +12,8 @@ exec nam code.nam &
 exit 0
 }
 set n0 [$ns node]
+$n0 set X_ 5
+$n0 set Y_ 5
 set n1 [$ns node]
 set n2 [$ns node]
 set n3 [$ns node]
