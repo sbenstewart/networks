@@ -18,7 +18,7 @@ public class server
             if(input.equals("bye"))
                 break;
             System.out.println("The text has been received...");
-	    StringBuilder ans=new StringBuilder();
+	          StringBuilder ans=new StringBuilder();
             ans.append(input);
             ans.reverse();
             System.out.println("Sending the result...");

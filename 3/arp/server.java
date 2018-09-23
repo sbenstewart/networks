@@ -15,17 +15,17 @@ public class server
         while (true)
         {
             String str = dis.readUTF();
-	    String result;
-	    String ip[]={"165.165.80.80","165.165.79.1"};
-	    String mac[]={"6A:08:AA:C2","8A:BC:E3:FA"};
-	    for(int i=0;i<ip.length;i++)
-		{
-			if(str.equals(ip[i]))
-			{				
+	          String result;
+	          String ip[]={"165.165.80.80","165.165.79.1"};
+	          String mac[]={"6A:08:AA:C2","8A:BC:E3:FA"};
+	          for(int i=0;i<ip.length;i++)
+		        {
+			           if(str.equals(ip[i]))
+			            {
             			System.out.println("Sending the result...");
             			dos.writeUTF(mac[i]+'\n');
-			}
-		}
+			            }
+		         }
         }
     }
 }

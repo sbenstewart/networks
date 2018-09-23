@@ -3,12 +3,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
 
-/**
- * Java program to create a simple HTTP Server to demonstrate how to use
- * ServerSocket and Socket class.
- * 
- * @author Javin Paul
- */
 public class http2 {
 
     public static void main(String args[]) throws IOException {
