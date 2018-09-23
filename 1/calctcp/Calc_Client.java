@@ -21,9 +21,9 @@ public class Calc_Client
             System.out.print("Enter the equation in the form: ");
             System.out.println("'operand operator operand'");
             String inp = sc.nextLine();
+            dos.writeUTF(inp);
             if (inp.equals("bye"))
                 break;
-            dos.writeUTF(inp);
             String ans = dis.readUTF();
             System.out.println("Answer=" + ans);
         }
