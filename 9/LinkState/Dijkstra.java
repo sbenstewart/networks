@@ -183,17 +183,14 @@ public class Dijkstra {
 		ComputeConnectionTabel();
 	}
 	public void PrintShortPathToDestination() {
-
 		System.out.println("Enter Destination Rooter Id< 1 - "+ (Max_rooters)+" >:");
-		Scanner in1 = new Scanner(System.in);       //Takes from the user the Destination Router ID as input
+		Scanner in1 = new Scanner(System.in);
 		String str_dest = in1.nextLine();
 		destination = Integer.parseInt(str_dest);
-		destination--;                              //Decrements Destination Router ID
+		destination--;
 		if (DistGrph[source][source] == 0) {
 			if (DistGrph[destination][destination] == 0) {
-
 				System.out.print("Shortest Path from Rooter:["+nodeid(source) +"] to ["+ nodeid(destination) + "] is: ");
-
 				if (conTable[destination].length > 0) {
 					for (int n = 0;n< conTable[destination].depth; n++ ) {
 						if (-1 != conTable[destination].ids[n]) System.out.print(" "+ nodeid(conTable[destination].ids[n]));
@@ -201,30 +198,23 @@ public class Dijkstra {
 					System.out.println();
 					System.out.println("The total cost is "+ conTable[destination].length);
 				}  else System.out.println("Path Not Available");
-			}  else System.out.println("Destination Rooter is Down");    //If Destination Router is down
-		} else System.out.println("Source Rooter is Down");                  //If Source Rooter is down
-
+			}  else System.out.println("Destination Rooter is Down");
+		} else System.out.println("Source Rooter is Down");
 	}
-	/* ChangeNetworkTopology */
 	public void ChangeNetworkTopology(){
-
 		System.out.println("Enter Rooter Id< 1 - "+ (Max_rooters)+" > to Down:");
-		Scanner in1 = new Scanner(System.in);          //Takes from the user the Router ID to Down as input
+		Scanner in1 = new Scanner(System.in);
 		String str_delt = in1.nextLine();
 		int delid = Integer.parseInt(str_delt);
 		delid--;
-
 		for (int j =0; j < Max_rooters; j++ ){
-			DistGrph[j][delid] = -1 ;             //Assigns -1 to the Down Router row
+			DistGrph[j][delid] = -1 ;
 		}
-
 		for (int l =0; l < Max_rooters; l++ ){
-			DistGrph[delid][l] = -1 ;            //Assigns -1 to the Down Router column
+			DistGrph[delid][l] = -1 ;
 		}
 		System.out.println("Modified Topology:");
-
-		//insert
-		String imageName = "%3d" ;                  //Formatting the content in Matrix format
+		String imageName = "%3d" ;
 		System.out.println();
 		System.out.print("ID|");
 		for (int j =0; j < Max_rooters; j++ ){
@@ -241,11 +231,8 @@ public class Dijkstra {
 			System.out.println();
 		}
 		System.out.println("-------------------------------------------------------------------");
-
 	}
-	/* MENU */
 	public Dijkstra() {
-
 		while (true){
 			System.out.println("===========================================================\n");
 			System.out.println("Dijkstra's Algorithm - Link State Routing Simulator:");
@@ -254,25 +241,24 @@ public class Dijkstra {
 			System.out.println("Command:");
 			Scanner in = new Scanner(System.in);
 			String regmessage = in.nextLine();
-
 			if (regmessage.equals("1")){
-				ReadTextfileToBuildGraph();             //ReadTextFiletoBuildGraph method call
-				for (int n = 0;n<Max_rooters;n++ ) {    //EXTRA FEATURE IMPLEMENTATION -> TO DISPLAY CONNECTION TABLE FOR ALL NODES
+				ReadTextfileToBuildGraph();
+				for (int n = 0;n<Max_rooters;n++ ) {
 					source = n;
-					ComputeConnectionTabel();       //ComputeConnectionTable method call
+					ComputeConnectionTabel();
 					System.out.println();
 				}
 			}
 			if (regmessage.equals("2")){
-				PrintConnectionTabel();                 //PrintConnectionTable method call
+				PrintConnectionTabel();
 			}
 			if (regmessage.equals("3")){
-				PrintShortPathToDestination();          //PrintShortPathToDestination method call
+				PrintShortPathToDestination();
 			}
 			if (regmessage.equals("4")){
-				ChangeNetworkTopology();                //ChangeNetworkTopology method call
+				ChangeNetworkTopology();
 				if ((source >-1) && (source < Max_rooters)){
-					ComputeConnectionTabel();           //ComputeConnectionTable method call
+					ComputeConnectionTabel();
 					if (DistGrph[source][source] == 0) {
 						if ((destination >-1) && (destination < Max_rooters)){
 							if (DistGrph[destination][destination] == 0) {
@@ -285,16 +271,15 @@ public class Dijkstra {
 									System.out.println("The total cost is "+ conTable[destination].length);
 								}
 								else System.out.println("Not Available");
-
 							} else System.out.println("Destination Rooter is Down");
 						} else System.out.println("Destination node is not selected");
-					} else System.out.println("Source Rooter is Down");           //Router Check conditions
+					} else System.out.println("Source Rooter is Down");
 
 				}else System.out.println("Source node is not selected");
 			}
 			if (regmessage.equals("5")){
 				System.out.println("Exit LinkStateRouting project. Good Bye!.");
-				System.exit(0);   	//Exit system call
+				System.exit(0);   	
 			}
 		}
 	}
