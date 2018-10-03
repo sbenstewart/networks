@@ -1,0 +1,41 @@
+Please enter the number of Vertices: 
+4
+Please enter the number of Edges: 
+5
+Please enter data for Edge 1:
+Source: 1
+Destination: 2
+Cost: 1
+Please enter data for Edge 2:
+Source: 1
+Destination: 3
+Cost: 3
+Please enter data for Edge 3:
+Source: 2
+Destination: 3
+Cost: 1
+Please enter data for Edge 4:
+Source: 2
+Destination: 4
+Cost: 1
+Please enter data for Edge 5:
+Source: 3
+Destination: 4
+Cost: 4
+
+The initial Routing Tables are: 
+Dist: 0    Dist: 1    Dist: 2    Dist: 2    
+Dist: 1    Dist: 0    Dist: 1    Dist: 1    
+Dist: 2    Dist: 1    Dist: 0    Dist: 2    
+Dist: 2    Dist: 1    Dist: 2    Dist: 0    
+
+Please enter the Source Node for the edge whose cost has changed: 2
+Please enter the Destination Node for the edge whose cost has changed: 4
+Please enter the new cost: 10
+
+The new Routing Tables are: 
+Dist: 0    Dist: 1    Dist: 2    Dist: 6    
+Dist: 1    Dist: 0    Dist: 1    Dist: 5    
+Dist: 2    Dist: 1    Dist: 0    Dist: 4    
+Dist: 6    Dist: 5    Dist: 4    Dist: 0    
+--------------------------------`
