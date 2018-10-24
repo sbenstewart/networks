@@ -10,13 +10,12 @@ public class dvr
  public static void main(String args[]) throws IOException
  {
   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-  
   System.out.println("Please enter the number of Vertices: ");
   v = Integer.parseInt(br.readLine());
-  
+
   System.out.println("Please enter the number of Edges: ");
   e = Integer.parseInt(br.readLine());
-  
+
   graph = new int[v][v];
   via = new int[v][v];
   rt = new int[v][v];
@@ -28,7 +27,7 @@ public class dvr
     else
      graph[i][j] = 9999;
    }
-  
+
   for(int i = 0; i < e; i++)
   {
    System.out.println("Please enter data for Edge " + (i + 1) + ":");
@@ -43,9 +42,9 @@ public class dvr
    graph[s][d] = c;
    graph[d][s] = c;
   }
-  
+
   dvr_calc_disp("The initial Routing Tables are: ");
-  
+
   System.out.print("Please enter the Source Node for the edge whose cost has changed: ");
   int s = Integer.parseInt(br.readLine());
   s--;
@@ -56,10 +55,10 @@ public class dvr
   int c = Integer.parseInt(br.readLine());
   graph[s][d] = c;
   graph[d][s] = c;
-  
+
   dvr_calc_disp("The new Routing Tables are: ");
  }
- 
+
  static void dvr_calc_disp(String message)
  {
   System.out.println();
@@ -69,7 +68,7 @@ public class dvr
   print_tables();
   System.out.println();
  }
- 
+
  static void update_table(int source)
  {
   for(int i = 0; i < v; i++)
@@ -91,7 +90,7 @@ public class dvr
    }
   }
  }
- 
+
  static void update_tables()
  {
   int k = 0;
@@ -103,7 +102,7 @@ public class dvr
     k = 0;
   }
  }
- 
+
  static void init_tables()
  {
   for(int i = 0; i < v; i++)
@@ -123,7 +122,7 @@ public class dvr
    }
   }
  }
- 
+
  static void print_tables()
  {
   for(int i = 0; i < v; i++)
@@ -135,5 +134,5 @@ public class dvr
    System.out.println();
   }
  }
- 
+
 }
